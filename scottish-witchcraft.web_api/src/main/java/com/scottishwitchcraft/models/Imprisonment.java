@@ -1,9 +1,13 @@
 package com.scottishwitchcraft.models;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.sql.Date;
 import java.util.Objects;
 
+@Entity
 public class Imprisonment {
+    @Id
     private String imprisonref;
     private String imprisonsystemid;
     private Long imprisonid;

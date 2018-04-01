@@ -1,10 +1,14 @@
 package com.scottishwitchcraft.models;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.sql.Date;
 import java.util.Collection;
 import java.util.Objects;
 
+@Entity
 public class Person {
+    @Id
     private String personref;
     private Long personid;
     private String personsystemid;

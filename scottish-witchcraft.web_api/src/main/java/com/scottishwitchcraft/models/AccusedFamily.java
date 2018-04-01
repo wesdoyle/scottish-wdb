@@ -1,10 +1,14 @@
 package com.scottishwitchcraft.models;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.sql.Date;
 import java.util.Collection;
 import java.util.Objects;
 
+@Entity
 public class AccusedFamily {
+    @Id
     private String accusedFamilyref;
     private String accusedFamilysystemid;
     private Long accusedFamilyid;
