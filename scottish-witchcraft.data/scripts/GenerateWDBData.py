@@ -1,3 +1,10 @@
+"""
+This script generates a SQL file used for creating tables
+and populating data from the WDB data CSV files.
+Data types are defined in the data set's README file.
+Original data may be found at https://data.world/history/scottish-witchcraft
+"""
+
 import os
 from collections import OrderedDict
 
