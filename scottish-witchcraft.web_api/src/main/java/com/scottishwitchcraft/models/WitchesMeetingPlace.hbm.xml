@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.scottishwitchcraft.dao.models.WitchesMeetingPlace" table="wdb_witchesmeetingplace" schema="public"
+           catalog="ScottishWitchcraft.Dev">
+        <id name="meetingplaceref">
+            <column name="meetingplaceref" sql-type="char(50)" length="50"/>
+        </id>
+        <property name="meetingplacesystemid">
+            <column name="meetingplacesystemid" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="meetingplaceid">
+            <column name="meetingplaceid" sql-type="bigint" not-null="true"/>
+        </property>
+        <property name="meetingplacePlace">
+            <column name="meetingplace_place" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="inversion">
+            <column name="inversion" sql-type="boolean" not-null="true"/>
+        </property>
+        <property name="location">
+            <column name="location" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="createdby">
+            <column name="createdby" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="createdate">
+            <column name="createdate" sql-type="date" not-null="true"/>
+        </property>
+        <property name="lastupdatedby">
+            <column name="lastupdatedby" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="lastupdatedon">
+            <column name="lastupdatedon" sql-type="date" not-null="true"/>
+        </property>
+        <many-to-one name="wdbCaseByCaseref" class="com.scottishwitchcraft.models.Case">
+            <column name="caseref" not-null="true"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

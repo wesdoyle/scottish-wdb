@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.scottishwitchcraft.dao.models.Confession" table="wdb_confession" schema="public"
+           catalog="ScottishWitchcraft.Dev">
+        <id name="confessionref">
+            <column name="confessionref" sql-type="char(50)" length="50"/>
+        </id>
+        <property name="confessionsystemid">
+            <column name="confessionsystemid" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="confessionid">
+            <column name="confessionid" sql-type="bigint" not-null="true"/>
+        </property>
+        <property name="centraltrialconfession">
+            <column name="centraltrialconfession" sql-type="boolean" not-null="true"/>
+        </property>
+        <property name="confessionrec">
+            <column name="confessionrec" sql-type="boolean" not-null="true"/>
+        </property>
+        <property name="confessiondate">
+            <column name="confessiondate" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="confessiondateAsDate">
+            <column name="confessiondate_as_date" sql-type="date" not-null="true"/>
+        </property>
+        <property name="confessionplace">
+            <column name="confessionplace" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="confessionlocation">
+            <column name="confessionlocation" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="confessiontext">
+            <column name="confessiontext" sql-type="boolean" not-null="true"/>
+        </property>
+        <property name="confessiondetails">
+            <column name="confessiondetails" sql-type="boolean" not-null="true"/>
+        </property>
+        <property name="confessionret">
+            <column name="confessionret" sql-type="boolean" not-null="true"/>
+        </property>
+        <property name="notes">
+            <column name="notes" sql-type="text" not-null="true"/>
+        </property>
+        <property name="createdby">
+            <column name="createdby" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="createdate">
+            <column name="createdate" sql-type="date" not-null="true"/>
+        </property>
+        <property name="lastupdatedby">
+            <column name="lastupdatedby" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="lastupdatedon">
+            <column name="lastupdatedon" sql-type="date" not-null="true"/>
+        </property>
+        <many-to-one name="wdbTrialByTrialref" class="com.scottishwitchcraft.dao.models.Trial">
+            <column name="trialref" not-null="true"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

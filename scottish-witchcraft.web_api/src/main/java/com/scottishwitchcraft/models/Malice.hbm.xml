@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.scottishwitchcraft.dao.models.Malice" table="wdb_malice" schema="public"
+           catalog="ScottishWitchcraft.Dev">
+        <id name="maliceref">
+            <column name="maliceref" sql-type="char(50)" length="50"/>
+        </id>
+        <property name="malicesystemid">
+            <column name="malicesystemid" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="maliceid">
+            <column name="maliceid" sql-type="bigint" not-null="true"/>
+        </property>
+        <property name="causeofmalice">
+            <column name="causeofmalice" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="createdby">
+            <column name="createdby" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="createdate">
+            <column name="createdate" sql-type="date" not-null="true"/>
+        </property>
+        <property name="lastupdatedby">
+            <column name="lastupdatedby" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="lastupdatedon">
+            <column name="lastupdatedon" sql-type="date" not-null="true"/>
+        </property>
+        <many-to-one name="wdbCaseByCaseref" class="com.scottishwitchcraft.models.Case">
+            <column name="caseref" not-null="true"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

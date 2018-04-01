@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.scottishwitchcraft.dao.models.DevilAppearance" table="wdb_devilappearance" schema="public"
+           catalog="ScottishWitchcraft.Dev">
+        <id name="devilref">
+            <column name="devilref" sql-type="char(50)" length="50"/>
+        </id>
+        <property name="devilsystemid">
+            <column name="devilsystemid" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="devilid">
+            <column name="devilid" sql-type="bigint" not-null="true"/>
+        </property>
+        <property name="devilType">
+            <column name="devil_type" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="devilText">
+            <column name="devil_text" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="createdby">
+            <column name="createdby" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="createdate">
+            <column name="createdate" sql-type="date" not-null="true"/>
+        </property>
+        <property name="lastupdatedby">
+            <column name="lastupdatedby" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="lastupdatedon">
+            <column name="lastupdatedon" sql-type="date" not-null="true"/>
+        </property>
+        <many-to-one name="wdbCaseByCaseref" class="com.scottishwitchcraft.models.Case">
+            <column name="caseref" not-null="true"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>
