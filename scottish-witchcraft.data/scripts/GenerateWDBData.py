@@ -49,6 +49,20 @@ def parse_table_data():
         for i, line in enumerate(f):
             line = line.lower().strip().replace('/', '_').replace('-', '_')
 
+            # data types are defined in a table in the README, which is now copied
+            # into a text file. The copied structure of this table is line-delimited and periodic:
+            # {table_name_a} (all prefixed 'wdb')
+            # 'column'
+            # 'data type'
+            # 'description'
+            # {col_a1}
+            # {data_type_a1}
+            # {desc_a1}
+            # {col_a2}
+            # {data_type_a2}
+            # {desc_a2}
+            # etc. -- Thus, we can reset a counter when line starts with wdb and cycle in thirds
+
             if line.startswith('wdb'):
                 current_dict = dict()
                 tables_dict[line] = current_dict
@@ -89,7 +103,7 @@ def generate_table_scripts(dictionary):
     scripts = []
     for table, columns in dictionary.items():
 
-        # There is a column in the WDB_Person which is unaccounted for in the README.
+        # There is a column in the WDB_Person which is unaccounted for in the README table.
         script = f'CREATE TABLE {table} ('
         if table == 'wdb_person':
             for i, (k, v) in enumerate(columns.items()):
