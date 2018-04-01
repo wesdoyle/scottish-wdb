@@ -1,6 +1,6 @@
 package com.scottishwitchcraft.webapi.data;
 
-import com.scottishwitchcraft.webapi.models.TrialPerson;
+import com.scottishwitchcraft.webapi.data.models.TrialPerson;
 import org.springframework.data.repository.CrudRepository;
 
 public interface ITrialPersonRepository extends CrudRepository<TrialPerson, String> {

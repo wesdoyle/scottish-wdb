@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.scottishwitchcraft.webapi.models.ElfFairyElements" table="wdb_elf_fairyelements" schema="public"
+           catalog="ScottishWitchcraft.Dev">
+        <id name="elffairyref">
+            <column name="elffairyref" sql-type="char(50)" length="50"/>
+        </id>
+        <property name="elffairysystemid">
+            <column name="elffairysystemid" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="elffairyid">
+            <column name="elffairyid" sql-type="bigint" not-null="true"/>
+        </property>
+        <property name="elffairyType">
+            <column name="elffairy_type" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="createdby">
+            <column name="createdby" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="createdate">
+            <column name="createdate" sql-type="date" not-null="true"/>
+        </property>
+        <property name="lastupdatedby">
+            <column name="lastupdatedby" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="lastupdatedon">
+            <column name="lastupdatedon" sql-type="date" not-null="true"/>
+        </property>
+        <many-to-one name="wdbCaseByCaseref" class="com.scottishwitchcraft.webapi.data.models.Case">
+            <column name="caseref" not-null="true"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>
