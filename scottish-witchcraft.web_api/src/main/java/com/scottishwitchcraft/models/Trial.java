@@ -2,11 +2,15 @@ package com.scottishwitchcraft.models;
 
 import com.scottishwitchcraft.dao.PrevCommission;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.sql.Date;
 import java.util.Collection;
 import java.util.Objects;
 
+@Entity
 public class Trial {
+    @Id
     private String trialref;
     private Long trialid;
     private String trialsystemid;

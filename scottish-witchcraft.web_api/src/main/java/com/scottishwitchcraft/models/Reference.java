@@ -1,9 +1,13 @@
 package com.scottishwitchcraft.models;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.sql.Date;
 import java.util.Objects;
 
+@Entity
 public class Reference {
+    @Id
     private String referenceref;
     private String refsystemid;
     private Long referenceid;

@@ -1,10 +1,14 @@
 package com.scottishwitchcraft.models;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.sql.Date;
 import java.util.Collection;
 import java.util.Objects;
 
+@Entity
 public class Source {
+    @Id
     private String sourceref;
     private String createdby;
     private Date createdate;

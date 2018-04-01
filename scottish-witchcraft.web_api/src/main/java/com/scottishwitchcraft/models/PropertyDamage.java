@@ -1,9 +1,13 @@
 package com.scottishwitchcraft.models;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.sql.Date;
 import java.util.Objects;
 
+@Entity
 public class PropertyDamage {
+    @Id
     private String propertydamageref;
     private String propertydamagesystemid;
     private Long propertydamageid;
