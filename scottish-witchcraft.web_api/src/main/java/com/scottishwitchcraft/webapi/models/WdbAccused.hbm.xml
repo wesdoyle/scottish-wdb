@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.scottishwitchcraft.webapi.models.WdbAccused" table="wdb_accused" schema="public"
+           catalog="ScottishWitchcraft.Dev">
+        <id name="accusedref">
+            <column name="accusedref" sql-type="char(20)" length="20"/>
+        </id>
+        <property name="accusedsystemid">
+            <column name="accusedsystemid" sql-type="char(3)" length="3" not-null="true"/>
+        </property>
+        <property name="accusedid">
+            <column name="accusedid" sql-type="bigint" not-null="true"/>
+        </property>
+        <property name="firstname">
+            <column name="firstname" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="lastname">
+            <column name="lastname" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="mFirstname">
+            <column name="m_firstname" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="mSurname">
+            <column name="m_surname" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="alias">
+            <column name="alias" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="patronymic">
+            <column name="patronymic" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="destitle">
+            <column name="destitle" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="sex">
+            <column name="sex" sql-type="char(6)" length="6" not-null="true"/>
+        </property>
+        <property name="age">
+            <column name="age" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="ageEstcareer">
+            <column name="age_estcareer" sql-type="boolean" not-null="true"/>
+        </property>
+        <property name="ageEstchild">
+            <column name="age_estchild" sql-type="boolean" not-null="true"/>
+        </property>
+        <property name="resSettlement">
+            <column name="res_settlement" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="resParish">
+            <column name="res_parish" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="resPresbytery">
+            <column name="res_presbytery" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="resCounty">
+            <column name="res_county" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="resBurgh">
+            <column name="res_burgh" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="resNgrLetters">
+            <column name="res_ngr_letters" sql-type="char(2)" length="2" not-null="true"/>
+        </property>
+        <property name="resNgrEasting">
+            <column name="res_ngr_easting" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="resNgrNorthing">
+            <column name="res_ngr_northing" sql-type="integer" not-null="true"/>
+        </property>
+        <property name="ethnicOrigin">
+            <column name="ethnic_origin" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="maritalstatus">
+            <column name="maritalstatus" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="socioecstatus">
+            <column name="socioecstatus" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="occupation">
+            <column name="occupation" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="notes">
+            <column name="notes" sql-type="text" not-null="true"/>
+        </property>
+        <property name="createdby">
+            <column name="createdby" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="createdate">
+            <column name="createdate" sql-type="date" not-null="true"/>
+        </property>
+        <property name="lastupdatedby">
+            <column name="lastupdatedby" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="lastupdatedon">
+            <column name="lastupdatedon" sql-type="date" not-null="true"/>
+        </property>
+        <set name="wdbAccusedFamiliesByAccusedref" inverse="true">
+            <key>
+                <column name="accusedref" not-null="true"/>
+            </key>
+            <one-to-many not-found="ignore" class="com.scottishwitchcraft.webapi.models.AccusedFamily"/>
+        </set>
+        <set name="wdbCasesByAccusedref" inverse="true">
+            <key>
+                <column name="accusedref" not-null="true"/>
+            </key>
+            <one-to-many not-found="ignore" class="com.scottishwitchcraft.webapi.models.Case"/>
+        </set>
+    </class>
+</hibernate-mapping>

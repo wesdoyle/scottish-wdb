@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.scottishwitchcraft.webapi.models.Complaint" table="wdb_complaint" schema="public"
+           catalog="ScottishWitchcraft.Dev">
+        <id name="complaintref">
+            <column name="complaintref" sql-type="char(50)" length="50"/>
+        </id>
+        <property name="complaintsystemid">
+            <column name="complaintsystemid" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="complaintid">
+            <column name="complaintid" sql-type="bigint" not-null="true"/>
+        </property>
+        <property name="complaint">
+            <column name="complaint" sql-type="boolean" not-null="true"/>
+        </property>
+        <property name="complaintType">
+            <column name="complaint_type" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="complaintdate">
+            <column name="complaintdate" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="complaintdateAsDate">
+            <column name="complaintdate_as_date" sql-type="date" not-null="true"/>
+        </property>
+        <property name="wherelodged">
+            <column name="wherelodged" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="involvement">
+            <column name="involvement" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="witchpricker">
+            <column name="witchpricker" sql-type="boolean" not-null="true"/>
+        </property>
+        <property name="createdby">
+            <column name="createdby" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="createdate">
+            <column name="createdate" sql-type="date" not-null="true"/>
+        </property>
+        <property name="lastupdatedby">
+            <column name="lastupdatedby" sql-type="char(50)" length="50" not-null="true"/>
+        </property>
+        <property name="lastupdatedon">
+            <column name="lastupdatedon" sql-type="date" not-null="true"/>
+        </property>
+        <many-to-one name="wdbTrialByTrialref" class="com.scottishwitchcraft.webapi.models.Trial">
+            <column name="trialref" not-null="true"/>
+        </many-to-one>
+        <many-to-one name="wdbAccusedFamilyByAccusedFamilyref" class="com.scottishwitchcraft.webapi.models.AccusedFamily">
+            <column name="accused_familyref" not-null="true"/>
+        </many-to-one>
+        <many-to-one name="wdbPersonByPersonref" class="com.scottishwitchcraft.webapi.models.Person">
+            <column name="personref" not-null="true"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>
