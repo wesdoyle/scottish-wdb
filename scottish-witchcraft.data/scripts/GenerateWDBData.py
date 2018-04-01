@@ -1,10 +1,9 @@
 import os
 from collections import OrderedDict
 
-DATA_ROOT = 'C:/Users/wes/Projects/scottish-witchcraft/scottish-witchcraft.data/source_data'
-DATASOURCE = os.path.join(DATA_ROOT, 'DataFromReadme')
-CSV_DIR = 'C:/Users/wes/Projects/scottish-witchcraft/scottish-witchcraft.data/source_data/tables_csv/'
-
+DATA_ROOT = os.path.join(os.environ['WDB_PROJECT_DIR'], 'scottish-witchcraft.data/source_data')
+DATA_SOURCE = os.path.join(DATA_ROOT, 'DataFromReadme')
+CSV_DIR = os.path.join(DATA_ROOT, 'tables_csv')
 CSV_FILES = sorted([os.path.splitext(f)[0].lower() for f in os.listdir(CSV_DIR) if f.endswith('csv')])
 
 POSTGRES_DTYPES_MAP = [
@@ -23,9 +22,10 @@ POSTGRES_DTYPES_MAP = [
     'character(255)',
     'text']
 
+
 def run_script():
     """Generates a SQL file to create and populated tables from
-    the  WDB dataset CSV files"""
+    the  WDB data set CSV files"""
     tables_dict = parse_table_data()
     source_dtypes = get_data_types(tables_dict)
     data_map = OrderedDict(zip(source_dtypes, POSTGRES_DTYPES_MAP))
@@ -38,7 +38,7 @@ def run_script():
 
 def parse_table_data():
     tables_dict = dict()
-    with open(DATASOURCE) as f:
+    with open(DATA_SOURCE) as f:
         for i, line in enumerate(f):
             line = line.lower().strip().replace('/', '_').replace('-', '_')
 
@@ -112,6 +112,7 @@ def print_scripts(scripts):
     for script in scripts:
         print(script)
         print('\n')
+
 
 def save_scripts(scripts):
     fpath = os.path.join(DATA_ROOT, 'wdb_postgres_create.sql')
