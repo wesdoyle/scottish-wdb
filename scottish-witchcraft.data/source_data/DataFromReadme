@@ -1,0 +1,2020 @@
+WDB_Accused
+Column
+Data Type
+Description
+AccusedRef
+Character(20)
+Unique identifier - initials plus system number
+AccusedSystemId
+Character(3)
+Initials ofrecord  creator
+AccusedID
+Long Integer
+System number
+FirstName
+Character(50)
+First name as given in the source
+LastName
+Character(50)
+Surname as given in the source
+M_Firstname
+Character(50)
+Standard modern first name
+M_Surname
+Character(50)
+Standard modern surname
+Alias
+Character(50)
+Name with patronymic or soubriquet
+Patronymic
+Character(50)
+Patronymic
+DesTitle
+Character(50)
+Designation or Title
+Sex
+Character(6)
+Sex of the accused
+Age
+Integer
+Age at time of case
+Age_estcareer
+Yes/No
+Indicates that age has been estimated from career
+Age_estchild
+Yes/No
+Indicates that age has been estimated from the existence of children
+Res_settlement
+Character(50)
+Place of residence - settlement
+Res_parish
+Character(50)
+Place of residence - parish
+Res_presbytery
+Character(50)
+Place of residence - presbytery
+Res_county
+Character(50)
+Place of residence - county
+Res_burgh
+Character(50)
+Place of residence - burgh
+Res_NGR_Letters
+Character(2)
+Grid reference of place of residence - letters
+Res_NGR_Easting
+Integer
+Grid reference of place of residence - easting
+Res_NGR_Northing
+Integer
+Grid reference of place of residence - northing
+Ethnic_origin
+Character(50)
+Ethnic origin
+MaritalStatus
+Character(50)
+Marital status
+SocioecStatus
+Character(50)
+Socio-economic status
+Occupation
+Character(50)
+Occupation
+Notes
+memo
+Notes on the accused
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
+WDB_Accused_family
+Column
+Data Type
+Description
+Accused_familyRef
+Character(20)
+Unique identifier - initials plus system number
+Accused_familySystemId
+Character(3)
+Initials of record creator
+Accused_familyID
+Long Integer
+System number
+Surname
+Character(50)
+Surname of family member
+Firstname
+Character(50)
+First name of family member
+Alias
+Character(50)
+Alias of family member
+Patronymic
+Character(50)
+Patronymic
+DesTitle
+Character(50)
+Designation or Title of family member
+Est_Year_of_Birth
+Integer
+Estimated year of birth
+Age
+Long Integer
+Age at time of case
+Age_estcareer
+Yes/No
+Indicates that age has been estimated from career
+Age_estchild
+Yes/No
+Indicates that age has been estimated from the existence of children
+Occupation
+Character(50)
+Occupation of family member
+Relationship
+Character(50)
+Relationship to accused
+AccusedRef
+Character(20)
+Identifier for accused
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
+WDB_Appeal
+Column
+Data Type
+Description
+AppealRef
+Character(50)
+Unique identifier - initials plus system number
+AppealSystemId
+Character(50)
+Initials of creator
+AppealID
+Long Integer
+System number
+Trialref
+Character(20)
+Local  identifier for trial
+PersonRef
+Character(20)
+Unique identifier for person involved (named commissioner)
+Centralauth
+Character(50)
+Name of type of central authority appealed to
+Reason
+Character(50)
+Reason for appeal
+Appealexists
+Yes/No
+Check box if no other information
+Appealdate
+Character(50)
+Date of appeal
+Appealdate_as_date
+Date
+Date of appeal as date
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
+WDB_CalendarCustom
+Column
+Data Type
+Description
+CustomRef
+Character(50)
+Unique identifier - initials plus system number
+CustomSystemId
+Character(50)
+Initials of creator
+CustomID
+Long Integer
+System number
+CaseRef
+Character(20)
+Local  identifier for case
+Custom_Type
+Character(50)
+Calendar custom or observance named in the document
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
+WDB_Case
+Column
+Data Type
+Description
+CaseRef
+Character(20)
+Unique identifier - initials plus system number
+CaseId
+Long Integer
+Initials of creator
+CaseSystemId
+Character(3)
+System number
+NamedIndividual
+Integer
+Case is about a named individual
+AccusedRef
+Character(20)
+Identifier for accused
+CaseStart_date
+Character(50)
+Date of case (Start)
+CaseStart_date_as_date
+Date
+Date of case (Start) as text
+Case_date
+Character(50)
+Date of case (End)   This is the definitive date for the case
+Case_date_as_date
+Date
+Date of case (End) as text
+Age_at_case
+Integer
+Age of accused at time of case
+CaseCommonName
+Character(50)
+Common name for the case
+Commission
+Character(100)
+Commission (for cases without named individuals)
+Complaint
+Character(100)
+Complaint to central authorities (for cases without named individuals)
+Correspondence
+Character(250)
+Correspondence (for cases without named individuals)
+Chronicle
+Character(255)
+Chronicle or narrative account (for cases without named individuals)
+Other
+Character(255)
+Other (for cases without named individuals)
+Suspects_text
+Byte
+Text describing number of suspects (for cases without named individuals)
+UNorthodoxRelPract_p
+Yes/No
+Unorthodox religious practice as primary characterisation of case - the team decided this was the main theme
+UNorthodoxRelPract_s
+Yes/No
+Unorthodox religious practice as secondary characterisation of case - the team found this mentioned in the documentation
+Consulting_p
+Yes/No
+Consulting a witch as primary characterisation of case - the team decided this was the main theme
+Consulting_s
+Yes/No
+Consulting a witch as secondary characterisation of case - the team found this mentioned in the documentation
+Demonic_p
+Yes/No
+Demonic elements  as primary characterisation of case - the team decided this was the main theme
+Demonic_s
+Yes/No
+Demonic elements  as secondary characterisation of case - the team found this mentioned in the documentation
+Demonic_possess_p
+Yes/No
+Demonic possession as primary characterisation of case - the team decided this was the main theme
+Demonic_possess_s
+Yes/No
+Demonic possession as secondary characterisation of case - the team found this mentioned in the documentation
+Fairies_p
+Yes/No
+Fairies as primary characterisation of case - the team decided this was the main theme
+Fairies_s
+Yes/No
+Fairies as secondary characterisation of case - the team found this mentioned in the documentation
+Folk_healing_p
+Yes/No
+Folk healing as primary characterisation of case - the team decided this was the main theme
+Folk_healing_s
+Yes/No
+Folk healing as secondary characterisation of case - the team found this mentioned in the documentation
+Maleficium_p
+Yes/No
+Maleficium as primary characterisation of case - the team decided this was the main theme
+Maleficium_s
+Yes/No
+Maleficium as secondary characterisation of case - the team found this mentioned in the documentation
+Midwifery_p
+Yes/No
+Midwifery as primary characterisation of case - the team decided this was the main theme
+Midwifery_s
+Yes/No
+Midwifery as secondary characterisation of case - the team found this mentioned in the documentation
+ImplicatedByAnother_p
+Yes/No
+Named as accomplice as primary characterisation of case - the team decided this was the main theme
+ImplicatedByAnother_s
+Yes/No
+Named as accomplice as secondary characterisation of case - the team found this mentioned in the documentation
+Neighbhd_dispute_p
+Yes/No
+Neighbourhood dispute as primary characterisation of case - the team decided this was the main theme
+Neighbhd_dispute_s
+Yes/No
+Neighbourhood dispute as secondary characterisation of case - the team found this mentioned in the documentation
+PoliticalMotive_p
+Yes/No
+Political motive as primary characterisation of case - the team decided this was the main theme
+PoliticalMotive_s
+Yes/No
+Political motive as secondary characterisation of case - the team found this mentioned in the documentation
+PropertyMotive_p
+Yes/No
+Property motive as primary characterisation of case - the team decided this was the main theme
+PropertyMotive_s
+Yes/No
+Property motive as secondary characterisation of case - the team found this mentioned in the documentation
+RefusedCharity_p
+Yes/No
+Refused Charity as primary characterisation of case - the team decided this was the main theme
+RefusedCharity_s
+Yes/No
+Refused Charity as secondary  characterisation of case - the team found this mentioned in the documentation
+Treason_p
+Yes/No
+Treason as primary characterisation of case - the team decided this was the main theme
+Treason_s
+Yes/No
+Treason as secondary  characterisation of case - the team found this mentioned in the documentation
+Other_p
+Yes/No
+Other primary characterisation
+Other_s
+Yes/No
+Other secondary characterisation
+OtherText
+Character(255)
+Description of other characterisation
+NotEnoughInfo_p
+Yes/No
+Not enough information recorded
+NotEnoughInfo_s
+Yes/No
+Characterisation unknown
+WhiteMagic_p
+Yes/No
+White Magic as primary characterisation - the team decided this was the main theme
+WhiteMagic_s
+Yes/No
+White Magic as secondary characterisation - the team found this mentioned in the documentation
+Charnotes
+memo
+Notes on characterisation of case
+DemonicPact
+Yes/No
+Demonic pact was implied in the sources
+DevilNotes
+memo
+Notes about the Devil from the documenation
+WitchesMeeting
+Yes/No
+Witches' meetings - accused attended
+MeetingName
+Character(50)
+Witches' meetings - Meeting Name (field never used)
+DevilPresent
+Yes/No
+Witches' meetings - Devil Present at a meeting
+Maleficium
+Yes/No
+Witches' meetings - Collective maleficium organised or committed at a meeting
+CommunalSex
+Yes/No
+Witches' meetings - Communal sex at a meeting
+DevilWorship
+Yes/No
+Witches' meetings - Worship of the Devil at a meeting
+FoodAndDrink
+Yes/No
+Witches' meetings - Food and Drink consumed at a meeting
+Dancing
+Yes/No
+Witches' meetings - Dancing at a meeting
+Singing
+Yes/No
+Witches' meetings - Singing at a meeting
+SingingText
+Character(255)
+Witches' meetings - Name of song sung at a meeting
+OtherPractices
+Character(255)
+Witches' meetings - Other practices at a meeting
+MeetingNotes
+memo
+Witches' meetings - description of meeting or anything to do with the meeting
+Elphane/Fairyland
+Yes/No
+Folk Culture - Elphane/Fairyland mentioned or described
+Food/Drink
+Yes/No
+Folk Culture - Food/Drink consumed at Elphane or fairyland
+SpecificVerbalFormulae
+Yes/No
+Folk Culture - Specific Verbal Formulae used for curing or any other ritual were discussed in the documentation
+SpecificRitualActs
+Yes/No
+Folk Culture - Specific Ritual Acts were discussed in the documentation
+Familiars
+Yes/No
+Folk Culture - The accused had a familiar (a small animal or spirit that did her bidding)
+Shape-Changing
+Yes/No
+Folk Culture - The documentation mentioned shape-changing of the accused
+Dreams/Visions
+Yes/No
+Folk Culture - Accused appeared in a Dream or Visions
+UnorthodoxReligiousPractice
+Yes/No
+Folk Culture - Accused used an Unorthodox Religious Practice
+SympatheticMagic
+Yes/No
+Folk Culture - Sympathetic magic (use of an object to stand in for a person) was alleged
+Ridingdead
+Yes/No
+Folk Culture - Riding with the dead
+FolkNotes
+memo
+Folk Culture - Notes about folk culture
+HumanIllness
+Yes/No
+Diseases/Illness - Accused caused Human illness
+HumanDeath
+Yes/No
+Diseases/Illness - Accused caused Human death
+AnimalIllness
+Yes/No
+Diseases/Illness - Accused caused Animal illness
+AnimalDeath
+Yes/No
+Diseases/Illness - Accused caused Animal death
+FemaleInfertility
+Yes/No
+Diseases/Illness - Accused caused Female infertility
+MaleImpotence
+Yes/No
+Diseases/Illness - Accused caused Male impotence
+AggravatingDisease
+Yes/No
+Diseases/Illness - Accused Aggravated an already existing disease
+TransferringDisease
+Yes/No
+Diseases/Illness - Accused Transferred a disease from sick person to someone or something else
+LayingOn
+Yes/No
+Diseases/Illness - Accused Layed on and took off a disease
+Removalbewitchment
+Yes/No
+Diseases/Illness - Accused Removed a bewitchment
+Quarreling
+Yes/No
+Diseases/Illness - Accused Quarrelled
+Cursing
+Yes/No
+Diseases/Illness - Accused Cursed someone
+Poisoning
+Yes/No
+Diseases/Illness - Accused Poisoned someone
+RecHealer
+Yes/No
+Diseases/Illness - Accused was a Recognised healer
+HealingHumans
+Yes/No
+Diseases/Illness - Accused Healed humans
+HealingAnimals
+Yes/No
+Diseases/Illness - Accused Healed animals
+Midwifery
+Yes/No
+Diseases/Illness - Accused practised Midwifery
+DiseaseNotes
+Character(255)
+Diseases/Illness - Notes about diseases and damage supposedly caused by the accused
+PropertyDamage
+Yes/No
+Damage to property - accused caused non specific damage
+WeatherModification
+Yes/No
+Damage - accused modified the weather
+OtherMaleficiaNotes
+Character(255)
+Damage  - Notes about the kind of damage supposedly caused by the accused
+OtherChargesNotes
+Character(255)
+Other charges - Notes about other crimes with which the accused was also charged
+ClaimedBewitched
+Yes/No
+Defence - claimed bewitched (field not consistently used)
+ClaimedPossessed
+Yes/No
+Defence - claimed Possessed by devil (field not consistently used)
+AdmitLesserCharge
+Yes/No
+Defence - admit to lesser charge (field not consistently used)
+ClaimedNaturalCauses
+Yes/No
+Defence - claimed natural causes (field not consistently used)
+Nodefence
+Yes/No
+Defence - offers no defence (field not consistently used)
+DefenseNotes
+Character(255)
+Notes for defence (field not consistently used)
+CaseNotes
+memo
+Any  notes on the case
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
+WDB_Case_person
+Column
+Data Type
+Description
+Case_personRef
+Character(20)
+Unique identifier - initials plus system number
+Case_personID
+Long Integer
+Initials of record creator
+Case_personSystemId
+Character(3)
+System number
+CaseRef
+Character(20)
+Case ID
+PersonRef
+Character(20)
+Person ID
+Involvement
+Character(50)
+Role of the person  in case
+Notes
+Character(255)
+General notes
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
+WDB_Commission
+Column
+Data Type
+Description
+CommissionRef
+Character(50)
+Unique identifier - initials plus system number
+CommissionSystemId
+Character(50)
+Initials of creator
+CommissionID
+Long Integer
+System number
+Trialref
+Character(20)
+Local  identifier for trial
+Commbody
+Character(50)
+Central authority that granted the commission: Privy Council, Parliament, Committee of Estates, Royal
+Commtype
+Character(50)
+Type of commission that was granted
+Commexists
+Yes/No
+Checkbox if no other information known
+Commdate
+Character(50)
+Date of commission
+Commdate_as_date
+Date
+Date of commission as date
+Seal
+Character(50)
+Seal under which the commission was granted
+Notes
+memo
+Any notes on the commission
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
+WDB_Complaint
+Column
+Data Type
+Description
+ComplaintRef
+Character(50)
+Unique identifier - initials plus system number
+ComplaintSystemId
+Character(50)
+Initials of creator
+ComplaintID
+Long Integer
+System number
+Trialref
+Character(20)
+Local  identifier for trial
+Complaint
+Yes/No
+Is a complaint recorded?
+Complaint_type
+Character(50)
+Who lodged the complaint
+Complaintdate
+Character(50)
+Date of complaint
+Complaintdate_as_date
+Date
+Date of complaint as date
+Wherelodged
+Character(50)
+Where complaintwas  lodged
+Accused_familyRef
+Character(50)
+Identifier for family member that made the complaint
+PersonRef
+Character(20)
+Person ID
+Involvement
+Character(50)
+Role in Trial
+WitchPricker
+Yes/No
+Is a witch pricker
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
+WDB_Confession
+Column
+Data Type
+Description
+ConfessionRef
+Character(50)
+Unique identifier - initials plus system number
+ConfessionSystemId
+Character(50)
+Initials of creator
+ConfessionID
+Long Integer
+System number
+Trialref
+Character(20)
+Local  identifier for trial
+CentralTrialConfession
+Yes/No
+Confession at central level
+Confessionrec
+Yes/No
+Checkbox to indicate that a  confession occured ( in case no other information known)
+Confessiondate
+Character(50)
+Date of confession
+Confessiondate_as_date
+Date
+Date of confession as date
+Confessionplace
+Character(50)
+Place of confession (e.g. building)
+Confessionlocation
+Character(50)
+Location of confession (e.g. town)
+Confessiontext
+Yes/No
+Confession text exists
+Confessiondetails
+Yes/No
+Details of confession exist
+Confessionret
+Yes/No
+Retraction of confession exists
+Notes
+memo
+Any notes on the confession
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
+WDB_CounterStrategy
+Column
+Data Type
+Description
+CounterStrategyRef
+Character(50)
+Unique identifier - initials plus system number
+CounterStrategySystemId
+Character(50)
+Initials of creator
+CounterStrategyID
+Long Integer
+System number
+CaseRef
+Character(20)
+Local  identifier for case
+CounterStrategy_Type
+Character(50)
+Type of strategy used to counter the magic of the accused or strategy used by accused to counter magic used against the accused
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
+WDB_DemonicPact
+Column
+Data Type
+Description
+DemonicRef
+Character(50)
+Unique identifier - initials plus system number
+DemonicSystemId
+Character(50)
+Initials of creator
+DemonicID
+Long Integer
+System number
+CaseRef
+Character(20)
+Local  identifier for case
+Demonic_Type
+Character(50)
+Demonic pact motif type
+Demonic_Text
+Character(50)
+Text field for further description of demonic pact motif type
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
+WDB_Denunciation
+Column
+Data Type
+Description
+DenuncRef
+Character(50)
+Unique identifier - initials plus system number
+DenuncSystemId
+Character(50)
+Initials of creator
+DenuncID
+Long Integer
+System number
+Trialref
+Character(20)
+Local  identifier for trial
+Denunc_exists
+Yes/No
+Checkbox to indicate that a  denunciation occured ( in case no other information known
+Denuncdate
+Character(50)
+Date of denunciation
+Denuncdate_as_date
+Date
+Date of denunciation as date
+Denunc_text
+Character(50)
+reason for denuciation
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
+WDB_DevilAppearance
+Column
+Data Type
+Description
+DevilRef
+Character(50)
+Unique identifier - initials plus system number
+DevilSystemId
+Character(50)
+Initials of creator
+DevilID
+Long Integer
+System number
+CaseRef
+Character(20)
+Local  identifier for case
+Devil_Type
+Character(50)
+Type of non-natural being
+Devil_Text
+Character(50)
+Text field to describe the non-natural being
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
+WDB_Elf_FairyElements
+Column
+Data Type
+Description
+ElfFairyRef
+Character(50)
+Unique identifier - initials plus system number
+ElfFairySystemId
+Character(50)
+Initials of creator
+ElfFairyID
+Long Integer
+System number
+CaseRef
+Character(20)
+Local  identifier for case
+ElfFairy_Type
+Character(50)
+Type of elf or fairy motif
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
+WDB_Imprisonment
+Column
+Data Type
+Description
+ImprisonRef
+Character(50)
+Unique identifier - initials plus system number
+ImprisonSystemId
+Character(50)
+Initials of creator
+ImprisonID
+Long Integer
+System number
+Trialref
+Character(20)
+Local  identifier for trial
+CentralTrialImprison
+Yes/No
+imprisonment at central level
+Imprisondate
+Character(50)
+Date of imprisonment
+Imprisondate_as_date
+Date
+Date of imprisonment as date
+Prison
+Character(50)
+Place of imprisonment (e.g. building)
+Location
+Character(50)
+Location of imprisonment (e.g. town)
+Moving
+Yes/No
+Moving suspect for confrontation with another suspect or a witness
+Fate_in_prison
+Character(50)
+Fate in prison
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
+WDB_LinkedTrial
+Column
+Data Type
+Description
+OneTrialref
+Character(20)
+Local  identifier for trial
+TwoTrialref
+Character(20)
+Local  identifier for trial
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
+WDB_Malice
+Column
+Data Type
+Description
+MaliceRef
+Character(50)
+Unique identifier - initials plus system number
+MaliceSystemId
+Character(50)
+Initials of creator
+MaliceID
+Long Integer
+System number
+CaseRef
+Character(20)
+Local  identifier for case
+Causeofmalice
+Character(50)
+Cause of witch's malice
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
+WDB_MentionedAsWitch
+Column
+Data Type
+Description
+MentionRef
+Character(50)
+Unique identifier - initials plus system number
+MentionSystemId
+Character(50)
+Initials of creator
+MentionID
+Long Integer
+System number
+Trialref
+Character(20)
+Local  identifier for trial
+Mentiondate
+Character(50)
+Date of mention
+Mentiondate_as_date
+Date
+Date of mention as date
+Mentiontype
+Character(50)
+Type of mention - how the suspect was mentioned
+TrialOfAccusedRef
+Character(20)
+Reference of trial
+TrialOfFirstName
+Character(50)
+First name
+TrialOfLastName
+Character(50)
+Surname
+MentionedInTrialOfRef
+Character(50)
+Reference of trial in which the suspect (i.e. the mentioned witch) was  mentioned
+dateOfMentionedTrial
+Character(50)
+Date of trial in which the suspect was mentioned
+dateOfMentionedTrial_as_date
+Date
+Date of trial as date
+FateOfMentionedWitch
+Character(50)
+Fate of the mentioned suspect
+Notes
+memo
+Notes
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
+WDB_MovestoHLA
+Column
+Data Type
+Description
+MoveRef
+Character(50)
+Unique identifier - initials plus system number
+MoveSystemId
+Character(50)
+Initials of creator
+MoveID
+Long Integer
+System number
+Trialref
+Character(20)
+Local  identifier for trial
+Moveto
+Character(50)
+Name of higher local authority to which the trial process moved
+Moveexists
+Yes/No
+Checkbox if no other information known
+Movedate
+Character(50)
+Date of move to highler local authority
+Movedate_as_date
+Date
+Date of move as move
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
+WDB_MusicalInstrument
+Column
+Data Type
+Description
+MusicalInstrumentRef
+Character(50)
+Unique identifier - initials plus system number
+MusicalInstrumentSystemId
+Character(50)
+Initials of creator
+MusicalInstrumentID
+Long Integer
+System number
+CaseRef
+Character(20)
+Local  identifier for case
+MusicalInstrument_Type
+Character(50)
+Type of musical instrument used at a witches' meeting
+MusicalInstrument_Text
+Character(50)
+Text field to describe the music played or the instrucment
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
+WDB_Ordeal
+Column
+Data Type
+Description
+OrdealRef
+Character(50)
+Unique identifier - initials plus system number
+OrdealSystemId
+Character(50)
+Initials of creator
+OrdealID
+Long Integer
+System number
+Trialref
+Character(20)
+Local  identifier for trial
+Ordealexists
+Yes/No
+Checkbox to indicate that an ordeal occured ( in case no other information known
+Ordealdate
+Character(50)
+Date of ordeal
+Ordealdate_as_date
+Date
+Date of ordeal as date
+Ordealtype
+Character(50)
+Type of ordeal used
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
+WDB_OtherCharges
+Column
+Data Type
+Description
+OtherChargesRef
+Character(50)
+Unique identifier - initials plus system number
+OtherChargesSystemId
+Character(50)
+Initials of creator
+OtherChargesID
+Long Integer
+System number
+CaseRef
+Character(20)
+Local  identifier for case
+OtherCharges_Type
+Character(50)
+Additional crimes the suspect was charged with (other than witchcraft)
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
+WDB_OtherNamedwitch
+Column
+Data Type
+Description
+NamedWitchRef
+Character(50)
+Unique identifier - initials plus system number
+NamedWitchSystemId
+Character(50)
+Initials of creator
+NamedWitchID
+Long Integer
+System number
+Trialref
+Character(20)
+Local  identifier for trial
+Mentiontype
+Character(50)
+Type of mention - how the named witch was mentioned
+NamedWitchAccusedRef
+Character(20)
+Identifier for accused witch
+NamedWitchFirstName
+Character(50)
+First name
+NamedWitchLastName
+Character(50)
+Surname
+NamedWitchTrialOfRef
+Character(50)
+Reference of the named witches' trial
+dateOfNamedWitchTrial
+Character(50)
+Date of the named witches' trial
+dateOfNamedWitchTrial_as_date
+Date
+Date of trial as date
+Notes
+memo
+Notes
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
+WDB_Person
+Column
+Data Type
+Description
+PersonRef
+Character(20)
+Unique identifier - initials plus system number
+PersonID
+Long Integer
+Initials of creator
+PersonSystemId
+Character(3)
+System number
+FirstName
+Character(50)
+First name
+LastName
+Character(50)
+Surname
+Other Details
+Character(50)
+Text if not a person - e.g text referenced as a demonologist
+Title
+Character(50)
+Title or designation
+Occupation
+Character(50)
+Occupation
+Office
+Character(50)
+Office
+Residence
+Character(50)
+Residence
+Notes
+memo
+Any notes on the person
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
+WDB_PrevCommission
+Column
+Data Type
+Description
+PrevCommRef
+Character(50)
+Unique identifier - initials plus system number
+PrevCommSystemId
+Character(50)
+Initials of creator
+PrevCommID
+Long Integer
+System number
+Trialref
+Character(20)
+Local  identifier for trial
+PrevCommexists
+Yes/No
+Checkbox if no other information known (field not used)
+PrevCommdate
+Character(50)
+Date of commission (field not used)
+PrevCommdate_as_date
+Date
+Date of commission as date (field not used)
+Fromwhere
+Character(50)
+From where commission previously granted (field not used)
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
+WDB_PropertyDamage
+Column
+Data Type
+Description
+PropertyDamageRef
+Character(50)
+Unique identifier - initials plus system number
+PropertyDamageSystemId
+Character(50)
+Initials of creator
+PropertyDamageID
+Long Integer
+System number
+CaseRef
+Character(20)
+Local  identifier for case
+PropertyDamage_Type
+Character(50)
+Type of property damage allegedly committed by the suspect
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
+WDB_Reference
+Column
+Data Type
+Description
+ReferenceRef
+Character(50)
+Unique identifier - initials plus system number
+RefSystemID
+Character(50)
+Initials of creator
+ReferenceID
+Long Integer
+System number
+CaseRef
+Character(50)
+Identifier for case
+SourceRef
+Character(50)
+Link to source
+Reference
+Character(255)
+Reference
+KirkSession
+Yes/No
+Kirk session minutes
+Presbytery
+Yes/No
+Presbytery minutes
+BurghCourt
+Yes/No
+Burgh court minutes
+Confession
+Yes/No
+Confession
+DraftDittay
+Yes/No
+Draft dittay
+Comm_CourtMin
+Yes/No
+Court minutes - under commission
+Just_CourtMin
+Yes/No
+Court minutes - court of justiciary
+Circuit_CourtMin
+Yes/No
+Court minutes - circuit court
+Dittay
+Yes/No
+Dittay
+Pleadings
+Yes/No
+Pleadings
+WitDep
+Yes/No
+Witnesses' depositions
+WitStatement
+Yes/No
+Witnesses' statements
+CommJust
+Yes/No
+Commission of justiciary
+PrivyCouncil
+Yes/No
+Commission of justiciary - Issued by privy council
+Parliament
+Yes/No
+Commission of justiciary - Issued by Parliament
+Estates
+Yes/No
+Commission of justiciary - Issued by committee of estates
+Royal
+Yes/No
+Commission of justiciary - Issued by the king
+CommText
+Yes/No
+Commission of justiciary - Text of commission
+Verdict
+Yes/No
+Verdict
+Sentence
+Yes/No
+Sentence
+Chronicle
+Yes/No
+Chronicle/narrative account
+Financial
+Yes/No
+Financial accounts
+Other
+Character(50)
+Other document type
+Notes
+memo
+Any notes on the reference
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
+WDB_ReligiousMotif
+Column
+Data Type
+Description
+MotifRef
+Character(50)
+Unique identifier - initials plus system number
+MotifSystemId
+Character(50)
+Initials of creator
+MotifID
+Long Integer
+System number
+CaseRef
+Character(20)
+Local  identifier for case
+Motif_Type
+Character(50)
+Type of religious motif desribed in the documents
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
+WDB_RitualObject
+Column
+Data Type
+Description
+RitualObjectRef
+Character(50)
+Unique identifier - initials plus system number
+RitualObjectSystemId
+Character(50)
+Initials of creator
+RitualObjectID
+Long Integer
+System number
+CaseRef
+Character(20)
+Local  identifier for case
+RitualObject_Type
+Character(50)
+Type of ritual object described in the document
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
+WDB_ShapeChanging
+Column
+Data Type
+Description
+ShapeChangingRef
+Character(50)
+Unique identifier - initials plus system number
+ShapeChangingSystemId
+Character(50)
+Initials of creator
+ShapeChangingID
+Long Integer
+System number
+CaseRef
+Character(20)
+Local  identifier for case
+ShapeChanging_Type
+Character(50)
+Type of shape changing described in the document
+Details
+Character(50)
+Details
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
+WDB_Source
+Column
+Data Type
+Description
+SourceRef
+Character(50)
+Name of source
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
+WDB_Torture
+Column
+Data Type
+Description
+TortureRef
+Character(50)
+Unique identifier - initials plus system number
+TortureSystemId
+Character(50)
+Initials of creator
+TortureID
+Long Integer
+System number
+Trialref
+Character(20)
+Local  identifier for trial
+Tortureexists
+Yes/No
+Checkbox to indicate that a torture occured ( in case no other information known
+Torturedate
+Character(50)
+Date of torture
+Torturedate_as_date
+Date
+Date of torture as date
+Torturetype
+Character(50)
+Type of torture described in the document
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
+WDB_Trial
+Column
+Data Type
+Description
+Trialref
+Character(20)
+Unique identifier - initials plus system number
+TrialId
+Long Integer
+System number
+TrialSystemId
+Character(3)
+Initials of creator
+CaseRef
+Character(20)
+Identifier for case
+TrialType
+Byte
+Type of trial
+Trial_settlement
+Character(50)
+Location of trial - settlement
+Trial_parish
+Character(50)
+Location of trial - parish
+Trial_presbytery
+Character(50)
+Location of trial - presbytery
+Trial_county
+Character(50)
+Location of trial - county
+Trial_burgh
+Character(50)
+Location of trial - burgh
+Trial_NGR_Letters
+Character(2)
+Grid reference of trial location - letters
+Trial_NGR_Easting
+Integer
+Grid reference of trial location - easting
+Trial_NGR_Northing
+Integer
+Grid reference of trial location - northing
+Watching
+Yes/No
+Watching and warding
+WatchingDate
+Character(50)
+Date of watching and warding
+WatchingDate_as_date
+Character(50)
+Date of watching and warding as date
+Arrest
+Yes/No
+Arrest
+ArrestDate
+Character(50)
+Date of arrest
+ArrestDate_as_date
+Date
+Date of arrest as date
+Fled
+Yes/No
+Fled from justice
+FledDate
+Character(50)
+Date Fled
+FledDate_as_date
+Date
+Date Fled as date
+ActionDropped
+Yes/No
+A specific decision was made to drop the action taken against the suspect
+Actiondropdate
+Character(50)
+Date Action was dropped
+Actiondropdate_as_date
+Date
+Action dropped on as date
+Actiondroppedby
+Character(50)
+Action dropped by (individual)
+Actionbody
+Character(50)
+Action dropped by (body)
+Confrontingsuspects
+Yes/No
+Confronting other suspects
+PretrialNotes
+memo
+Notes on pretrial phase
+ProcessType
+Character(50)
+Process type (central, local, mixed, unknown, mention)
+TrialDate
+Character(50)
+Date of trial
+TrialDate_as_date
+Date
+Date of trial as date
+TrialPlace
+Character(50)
+Place of trial (building)
+Female_accusers
+Long Integer
+Number of female accusers
+Male_accusers
+Long Integer
+Number of male accusers
+High_status
+Yes/No
+High status people among the accusers
+Defence
+Yes/No
+Defence
+Verdict
+Character(50)
+Verdict
+Sentence
+Character(50)
+Sentence
+Cjtorder
+Yes/No
+Order for central justiciary trial (Central Trial only)
+Cjtdate
+Character(50)
+Date of order for central justiciary trial (Central Trial only)
+Cjtdate_as_date
+Date
+Date of order for central justiciary trial as date (Central Trial only)
+Circuit
+Yes/No
+Circuit court (Mixed Trial only)
+Circuitname
+Character(50)
+Name of circuit (Mixed Trial only)
+Localwithcrep
+Yes/No
+Local trial with central representative (Mixed Trial only)
+Noreftocentral
+Yes/No
+No known reference to central justice (Local Trial only)
+TrialNotes
+memo
+Any notes on the trial phase
+Execution
+Yes/No
+Execution took place
+Executionmethod
+Character(50)
+Execution method
+ExecutionDate
+Character(50)
+Date of execution
+ExecutionDate_as_date
+Date
+Date of execution as date
+ExecutionPlace
+Character(50)
+Place of execution
+Exec_settlement
+Character(50)
+Location of execution - settlement
+Exec_parish
+Character(50)
+Location of execution - parish
+Exec_presbytery
+Character(50)
+Location of execution - presbytery
+Exec_county
+Character(50)
+Location of execution - county
+Exec_burgh
+Character(50)
+Location of execution - burgh
+Exec_NGR_Letters
+Character(2)
+Grid reference of place of execution - letters
+Exec_NGR_Easting
+Integer
+Grid reference of place of execution - easting
+Exec_NGR_Northing
+Integer
+Grid reference of place of execution - northing
+PostTrialNotes
+memo
+Notes on post trial phase
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
+WDB_Trial_Person
+Column
+Data Type
+Description
+Trial_personRef
+Character(20)
+Unique identifier - initials plus system number
+Trial_personID
+Long Integer
+System number
+Trial_personSystemId
+Character(3)
+Initials of creator
+TrialRef
+Character(20)
+Trial ID
+PersonRef
+Character(20)
+Person ID
+CaseRef
+Character(20)
+Case ID
+Involvement
+Character(50)
+Role in case
+WitchPricker
+Yes/No
+Is a witch pricker
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
+WDB_WeatherModification
+Column
+Data Type
+Description
+WeatherModificationRef
+Character(50)
+Unique identifier - initials plus system number
+WeatherModificationSystemId
+Character(50)
+Initials of creator
+WeatherModificationID
+Long Integer
+System number
+CaseRef
+Character(20)
+Local  identifier for case
+WeatherModification_Type
+Character(50)
+Type of weather modification described in the documents
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
+WDB_WhiteMagic
+Column
+Data Type
+Description
+WhiteMagicRef
+Character(50)
+Unique identifier - initials plus system number
+WhiteMagicSystemId
+Character(50)
+Initials of creator
+WhiteMagicID
+Long Integer
+System number
+CaseRef
+Character(20)
+Local  identifier for case
+WhiteMagic_Type
+Character(50)
+Type of white magic described in the documents
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
+WDB_WitchesMeetingPlace
+Column
+Data Type
+Description
+MeetingPlaceRef
+Character(50)
+Unique identifier - initials plus system number
+MeetingPlaceSystemId
+Character(50)
+Initials of creator
+MeetingPlaceID
+Long Integer
+System number
+CaseRef
+Character(20)
+Local  identifier for case
+MeetingPlace_Place
+Character(50)
+Place of witches' meeting
+Inversion
+Yes/No
+Inversion used at a witches' meeting
+Location
+Character(50)
+Location of the witches' meeting
+Createdby
+Character(50)
+Name of person who created this record
+Createdate
+Date
+Date record created
+Lastupdatedby
+Character(50)
+Name of person who last updated the record
+Lastupdatedon
+Date
+Date record last updated
