@@ -33,12 +33,19 @@ POSTGRES_DTYPES_MAP = [
 def run_script():
     """Generates a SQL file to create and populated tables from
     the  WDB data set CSV files"""
+
     tables_dict = parse_table_data()
     source_dtypes = get_data_types(tables_dict)
     data_map = OrderedDict(zip(source_dtypes, POSTGRES_DTYPES_MAP))
     tables_dict = clean_data_types(tables_dict, data_map)
-    scripts = generate_table_scripts(tables_dict)
-    save_scripts(scripts)
+
+    create_tables = scripts.append(generate_table_scripts(tables_dict))
+    create_pks = scripts.append(generate_primary_key_scripts(tables_dict))
+    create_fks = scripts.append(generate_foreign_key_scripts(tables_dict))
+
+    save_script(create_tables, 'create_tables.sql')
+    save_script(create_pks, 'create_pks.sql')
+    save_script(create_fks, 'create_fks.sql')
 
 
 # {'table_name': {'column', 'dtype'}}
@@ -101,6 +108,7 @@ def clean_data_types(tables_dict, data_map):
 
 def generate_table_scripts(dictionary):
     scripts = []
+
     for table, columns in dictionary.items():
 
         # There is a column in the WDB_Person which is unaccounted for in the README table.
@@ -129,14 +137,49 @@ def generate_table_scripts(dictionary):
     return scripts
 
 
+def generate_primary_key_scripts(dictionary):
+    for table, columns in dictionary.items():
+        # hack: linkedtrial does not have unique keys. could handle apriori by ensuring distinct values
+        # when creating pks
+        if table != 'wdb_linkedtrial':
+            for i, (k, v) in enumerate(columns.items()):
+                if i == 0:
+                    pk = k
+            script = f'ALTER TABLE public.{table} ADD PRIMARY KEY ({pk});'
+            print(script)
+
+
+def get_pk_dict(dictionary):
+    pk_dict = dict()
+    for table, columns in dictionary.items():
+        for i, (k, v) in enumerate(columns.items()):
+            if i == 0:
+                pk_dict[table] = k
+    return pk_dict
+
+
+def generate_foreign_key_scripts(tables_dict):
+    pks = get_pk_dict(tables_dict)
+    for table, columns in tables_dict.items():
+        for i, (col_name, col_dtype) in enumerate(columns.items()):
+            if i != 0:  # ignore PKs
+                for pk_table, pk_col in pks.items():
+                    if col_name == pk_col:
+                        script = f'ALTER TABLE public.{table}\n \
+                        ADD CONSTRAINT fk_{table}_to_{pk_col}\n \
+                        FOREIGN KEY ({col_name})\n \
+                        REFERENCES {pk_table}({pk_col});'
+                        print(script)
+
+
 def print_scripts(scripts):
     for script in scripts:
         print(script)
         print('\n')
 
 
-def save_scripts(scripts):
-    fpath = os.path.join(DATA_ROOT, 'wdb_postgres_create.sql')
+def save_script(scripts, name):
+    fpath = os.path.join(DATA_ROOT, name)
     with open(fpath, 'w') as file:
         for line in scripts:
             file.write(line)
