@@ -181,6 +181,7 @@ def print_scripts(scripts):
 def save_script(scripts, name):
     fpath = os.path.join(DATA_ROOT, name)
     with open(fpath, 'w') as file:
+        file.write("-- This script is auto-generated")
         for line in scripts:
             file.write(line)
     print(f'Scripts saved to {fpath}.')
