@@ -2,12 +2,14 @@ package com.scottishwitchcraft.models;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+// import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import java.sql.Date;
-import java.util.Collection;
+// import java.util.Collection;
 import java.util.Objects;
 
 @Entity
+@Table(name="wdb_person")
 public class Person {
     @Id
     private String personref;
@@ -26,14 +28,14 @@ public class Person {
     private Date createdate;
     private String lastupdatedby;
     private Date lastupdatedon;
-    @OneToMany
-    private Collection<Appeal> wdbAppealsByPersonref;
-    @OneToMany
-    private Collection<CasePerson> wdbCasePeopleByPersonref;
-    @OneToMany
-    private Collection<Complaint> wdbComplaintsByPersonref;
-    @OneToMany
-    private Collection<TrialPerson> wdbTrialPeopleByPersonref;
+    // OneToMany
+    // rivate Collection<Appeal> wdbAppealsByPersonref;
+    // OneToMany
+    // rivate Collection<CasePerson> wdbCasePeopleByPersonref;
+    // OneToMany
+    // rivate Collection<Complaint> wdbComplaintsByPersonref;
+    // OneToMany
+    // private Collection<TrialPerson> wdbTrialPeopleByPersonref;
 
     public String getPersonref() {
         return personref;
@@ -190,37 +192,5 @@ public class Person {
     public int hashCode() {
 
         return Objects.hash(personref, personid, personsystemid, firstname, lastname, otherDetails, title, occupation, office, residence, isdeleted, notes, createdby, createdate, lastupdatedby, lastupdatedon);
-    }
-
-    public Collection<Appeal> getWdbAppealsByPersonref() {
-        return wdbAppealsByPersonref;
-    }
-
-    public void setWdbAppealsByPersonref(Collection<Appeal> wdbAppealsByPersonref) {
-        this.wdbAppealsByPersonref = wdbAppealsByPersonref;
-    }
-
-    public Collection<CasePerson> getWdbCasePeopleByPersonref() {
-        return wdbCasePeopleByPersonref;
-    }
-
-    public void setWdbCasePeopleByPersonref(Collection<CasePerson> wdbCasePeopleByPersonref) {
-        this.wdbCasePeopleByPersonref = wdbCasePeopleByPersonref;
-    }
-
-    public Collection<Complaint> getWdbComplaintsByPersonref() {
-        return wdbComplaintsByPersonref;
-    }
-
-    public void setWdbComplaintsByPersonref(Collection<Complaint> wdbComplaintsByPersonref) {
-        this.wdbComplaintsByPersonref = wdbComplaintsByPersonref;
-    }
-
-    public Collection<TrialPerson> getWdbTrialPeopleByPersonref() {
-        return wdbTrialPeopleByPersonref;
-    }
-
-    public void setWdbTrialPeopleByPersonref(Collection<TrialPerson> wdbTrialPeopleByPersonref) {
-        this.wdbTrialPeopleByPersonref = wdbTrialPeopleByPersonref;
     }
 }

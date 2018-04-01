@@ -3,10 +3,12 @@ package com.scottishwitchcraft.models;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import java.sql.Date;
 import java.util.Objects;
 
 @Entity
+@Table(name="wdb_trialperson")
 public class TrialPerson {
     @Id
     private String trialPersonref;
