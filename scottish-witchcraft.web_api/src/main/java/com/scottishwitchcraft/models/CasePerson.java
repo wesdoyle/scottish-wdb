@@ -2,6 +2,7 @@ package com.scottishwitchcraft.models;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import java.sql.Date;
 import java.util.Objects;
 
@@ -17,7 +18,8 @@ public class CasePerson {
     private Date createdate;
     private String lastupdatedby;
     private Date lastupdatedon;
-    private Case wdbCaseByCaseref;
+    // private Case wdbCaseByCaseref;
+    @OneToOne
     private Person wdbPersonByPersonref;
 
     public String getCasePersonref() {
@@ -114,13 +116,13 @@ public class CasePerson {
         return Objects.hash(casePersonref, casePersonid, casePersonsystemid, involvement, notes, createdby, createdate, lastupdatedby, lastupdatedon);
     }
 
-    public Case getWdbCaseByCaseref() {
-        return wdbCaseByCaseref;
-    }
+    // public Case getWdbCaseByCaseref() {
+    //    return wdbCaseByCaseref;
+    // }
 
-    public void setWdbCaseByCaseref(Case wdbCaseByCaseref) {
-        this.wdbCaseByCaseref = wdbCaseByCaseref;
-    }
+    // public void setWdbCaseByCaseref(Case wdbCaseByCaseref) {
+    //    this.wdbCaseByCaseref = wdbCaseByCaseref;
+    // }
 
     public Person getWdbPersonByPersonref() {
         return wdbPersonByPersonref;

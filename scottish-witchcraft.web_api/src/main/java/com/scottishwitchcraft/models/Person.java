@@ -2,6 +2,7 @@ package com.scottishwitchcraft.models;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.sql.Date;
 import java.util.Collection;
 import java.util.Objects;
@@ -25,9 +26,13 @@ public class Person {
     private Date createdate;
     private String lastupdatedby;
     private Date lastupdatedon;
+    @OneToMany
     private Collection<Appeal> wdbAppealsByPersonref;
+    @OneToMany
     private Collection<CasePerson> wdbCasePeopleByPersonref;
+    @OneToMany
     private Collection<Complaint> wdbComplaintsByPersonref;
+    @OneToMany
     private Collection<TrialPerson> wdbTrialPeopleByPersonref;
 
     public String getPersonref() {

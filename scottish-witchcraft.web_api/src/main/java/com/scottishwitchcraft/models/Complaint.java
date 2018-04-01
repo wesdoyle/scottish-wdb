@@ -2,6 +2,7 @@ package com.scottishwitchcraft.models;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import java.sql.Date;
 import java.util.Objects;
 
@@ -22,8 +23,7 @@ public class Complaint {
     private Date createdate;
     private String lastupdatedby;
     private Date lastupdatedon;
-    private Trial wdbTrialByTrialref;
-    private AccusedFamily wdbAccusedFamilyByAccusedFamilyref;
+    @OneToOne
     private Person wdbPersonByPersonref;
 
     public String getComplaintref() {
@@ -163,22 +163,6 @@ public class Complaint {
     public int hashCode() {
 
         return Objects.hash(complaintref, complaintsystemid, complaintid, complaint, complaintType, complaintdate, complaintdateAsDate, wherelodged, involvement, witchpricker, createdby, createdate, lastupdatedby, lastupdatedon);
-    }
-
-    public Trial getWdbTrialByTrialref() {
-        return wdbTrialByTrialref;
-    }
-
-    public void setWdbTrialByTrialref(Trial wdbTrialByTrialref) {
-        this.wdbTrialByTrialref = wdbTrialByTrialref;
-    }
-
-    public AccusedFamily getWdbAccusedFamilyByAccusedFamilyref() {
-        return wdbAccusedFamilyByAccusedFamilyref;
-    }
-
-    public void setWdbAccusedFamilyByAccusedFamilyref(AccusedFamily wdbAccusedFamilyByAccusedFamilyref) {
-        this.wdbAccusedFamilyByAccusedFamilyref = wdbAccusedFamilyByAccusedFamilyref;
     }
 
     public Person getWdbPersonByPersonref() {
